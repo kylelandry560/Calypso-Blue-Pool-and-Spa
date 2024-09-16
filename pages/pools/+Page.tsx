@@ -9,7 +9,8 @@ export default function Page() {
         slight tinge of sales tactics, but not overbearingly. Preferably there
         should be a navigation drawer on the left.
       </p>
-      <p>Bikash Wrote this</p>
+      <p> Bikash Wrote this</p>
+      <p> Bikash Pull request</p>
     </>
   );
 }
