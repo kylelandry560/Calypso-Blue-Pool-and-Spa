@@ -10,6 +10,6 @@ export default {
 
   passToClient: ["user"],
   // <title>
-  title: "My Vike App",
+  title: "Calypso Blue Pool & Spa",
   extends: vikeReact,
 } satisfies Config;
