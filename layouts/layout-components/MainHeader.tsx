@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from "react";
 import {
   HoverCard,
@@ -29,7 +30,6 @@ import classes from "./MainHeader.module.css";
 import { Link } from "../../components/Link";
 
 interface MockData {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   icon: React.ComponentType<any>;
   title: string;
   description: string;
@@ -114,7 +114,6 @@ export function MainHeader() {
             <a href="/" className={classes.link}>
               Home
             </a>
-            <NavLink />
 
             <HoverCard
               width={400}
