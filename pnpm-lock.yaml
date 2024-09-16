@@ -20,6 +20,9 @@ importers:
       '@prisma/client':
         specifier: ^5.19.1
         version: 5.19.1(prisma@5.19.1)
+      '@tabler/icons-react':
+        specifier: ^3.17.0
+        version: 3.17.0(react@18.3.1)
       '@universal-middleware/core':
         specifier: ^0.2.9
         version: 0.2.10
@@ -777,6 +780,14 @@ packages:
     resolution: {integrity: sha512-fOvu7PCQjAj4eWDEuD8Xz5gpzFqXzGlxHZozHP4b9Jxv9APtdxL6STqztDzMLuRXEc4UpXGGhx029Xgm91QBeA==}
     cpu: [x64]
     os: [win32]
+
+  '@tabler/icons-react@3.17.0':
+    resolution: {integrity: sha512-Ndm9Htv7KpIU1PYYrzs5EMhyA3aZGcgaxUp9Q1XOxcRZ+I0X+Ub2WS5f4bkRyDdL1s0++k2T9XRgmg2pG113sw==}
+    peerDependencies:
+      react: '>= 16'
+
+  '@tabler/icons@3.17.0':
+    resolution: {integrity: sha512-sCSfAQ0w93KSnSL7tS08n73CdIKpuHP8foeLMWgDKiZaCs8ZE//N3ytazCk651ZtruTtByI3b+ZDj7nRf+hHvA==}
 
   '@ts-morph/common@0.20.0':
     resolution: {integrity: sha512-7uKjByfbPpwuzkstL3L5MQyuXPSKdoNG93Fmi2JoDcTf3pEP731JdRFAduRVkOs8oqxPsXKA+ScrWkdQ8t/I+Q==}
@@ -3343,6 +3354,13 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.21.3':
     optional: true
+
+  '@tabler/icons-react@3.17.0(react@18.3.1)':
+    dependencies:
+      '@tabler/icons': 3.17.0
+      react: 18.3.1
+
+  '@tabler/icons@3.17.0': {}
 
   '@ts-morph/common@0.20.0':
     dependencies:
