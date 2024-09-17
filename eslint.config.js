@@ -39,6 +39,7 @@ export default tseslint.config(
         },
       ],
       "@typescript-eslint/no-namespace": 0,
+      "linebreak-style": ["error", "unix"]
     },
   },
 
