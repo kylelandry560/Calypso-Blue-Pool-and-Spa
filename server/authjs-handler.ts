@@ -1,13 +1,26 @@
-import { Auth, type AuthConfig, createActionURL, setEnvDefaults } from "@auth/core";
+import {
+  Auth,
+  type AuthConfig,
+  createActionURL,
+  setEnvDefaults,
+} from "@auth/core";
 import CredentialsProvider from "@auth/core/providers/credentials";
 import type { Session } from "@auth/core/types";
-import type { Get, UniversalHandler, UniversalMiddleware } from "@universal-middleware/core";
+import type {
+  Get,
+  UniversalHandler,
+  UniversalMiddleware,
+} from "@universal-middleware/core";
 
 const env: Record<string, string | undefined> =
   typeof process?.env !== "undefined"
     ? process.env
     : import.meta && "env" in import.meta
-      ? (import.meta as ImportMeta & { env: Record<string, string | undefined> }).env
+      ? (
+          import.meta as ImportMeta & {
+            env: Record<string, string | undefined>;
+          }
+        ).env
       : {};
 
 if (!globalThis.crypto) {
@@ -15,7 +28,9 @@ if (!globalThis.crypto) {
    * Polyfill needed if Auth.js code runs on node18
    */
   Object.defineProperty(globalThis, "crypto", {
-    value: await import("node:crypto").then((crypto) => crypto.webcrypto as Crypto),
+    value: await import("node:crypto").then(
+      (crypto) => crypto.webcrypto as Crypto,
+    ),
     writable: false,
     configurable: true,
   });
@@ -23,7 +38,9 @@ if (!globalThis.crypto) {
 
 const authjsConfig = {
   basePath: "/api/auth",
-  trustHost: Boolean(env.AUTH_TRUST_HOST ?? env.VERCEL ?? env.NODE_ENV !== "production"),
+  trustHost: Boolean(
+    env.AUTH_TRUST_HOST ?? env.VERCEL ?? env.NODE_ENV !== "production",
+  ),
   // TODO: Replace secret {@see https://authjs.dev/reference/core#secret}
   secret: "MY_SECRET",
   providers: [
@@ -50,12 +67,24 @@ const authjsConfig = {
 /**
  * Retrieve Auth.js session from Request
  */
-export async function getSession(req: Request, config: Omit<AuthConfig, "raw">): Promise<Session | null> {
+export async function getSession(
+  req: Request,
+  config: Omit<AuthConfig, "raw">,
+): Promise<Session | null> {
   setEnvDefaults(process.env, config);
   const requestURL = new URL(req.url);
-  const url = createActionURL("session", requestURL.protocol, req.headers, process.env, config);
+  const url = createActionURL(
+    "session",
+    requestURL.protocol,
+    req.headers,
+    process.env,
+    config,
+  );
 
-  const response = await Auth(new Request(url, { headers: { cookie: req.headers.get("cookie") ?? "" } }), config);
+  const response = await Auth(
+    new Request(url, { headers: { cookie: req.headers.get("cookie") ?? "" } }),
+    config,
+  );
 
   const { status = 200 } = response;
 
@@ -70,20 +99,21 @@ export async function getSession(req: Request, config: Omit<AuthConfig, "raw">):
  * Add Auth.js session to context
  * @link {@see https://authjs.dev/getting-started/session-management/get-session}
  **/
-export const authjsSessionMiddleware: Get<[], UniversalMiddleware> = () => async (request, context) => {
-  try {
-    return {
-      ...context,
-      session: await getSession(request, authjsConfig),
-    };
-  } catch (error) {
-    console.debug("authjsSessionMiddleware:", error);
-    return {
-      ...context,
-      session: null,
-    };
-  }
-};
+export const authjsSessionMiddleware: Get<[], UniversalMiddleware> =
+  () => async (request, context) => {
+    try {
+      return {
+        ...context,
+        session: await getSession(request, authjsConfig),
+      };
+    } catch (error) {
+      console.debug("authjsSessionMiddleware:", error);
+      return {
+        ...context,
+        session: null,
+      };
+    }
+  };
 
 /**
  * Auth.js route

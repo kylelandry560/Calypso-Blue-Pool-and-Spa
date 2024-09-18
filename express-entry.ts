@@ -1,6 +1,9 @@
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { authjsHandler, authjsSessionMiddleware } from "./server/authjs-handler";
+import {
+  authjsHandler,
+  authjsSessionMiddleware,
+} from "./server/authjs-handler";
 
 import { vikeHandler } from "./server/vike-handler";
 import { telefuncHandler } from "./server/telefunc-handler";
@@ -11,7 +14,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const root = __dirname;
 const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
-const hmrPort = process.env.HMR_PORT ? parseInt(process.env.HMR_PORT, 10) : 24678;
+const hmrPort = process.env.HMR_PORT
+  ? parseInt(process.env.HMR_PORT, 10)
+  : 24678;
 
 export default (await startServer()) as unknown;
 
