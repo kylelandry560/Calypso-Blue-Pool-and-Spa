@@ -1,0 +1,40 @@
+/* spa.css */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2cm; /* Space between grid items */
+    padding: 16px; /* Optional: Padding around the grid */
+  }
+  
+  .card {
+    position: relative;
+    height: 200px; /* Adjust height as needed */
+    color: white;
+    overflow: hidden;
+  }
+  
+  .card-content {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
+    padding: 8px;
+  }
+  
+  .category {
+    margin-bottom: 4px;
+  }
+  
+  .title {
+    margin-bottom: 8px;
+  }
+  
+  /* spa.css */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2cm; /* Adjust the spacing between grid items to 2 cm */
+    padding: 16px; /* Optional padding around the grid container */
+  }
+  

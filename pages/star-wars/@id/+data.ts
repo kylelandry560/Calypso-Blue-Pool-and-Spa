@@ -11,6 +11,7 @@ export const data = async (pageContext: PageContextServer) => {
   const response = await fetch(
     `https://brillout.github.io/star-wars/api/films/${pageContext.routeParams.id}.json`,
   );
+  
   //using the 'as' keyword insures that typescript ignores the extra fields that may be present in the data.
   let movie = (await response.json()) as MovieDetails;
   // We remove data we don't need because the data is passed to
