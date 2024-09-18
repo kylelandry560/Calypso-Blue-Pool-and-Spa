@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "@auth/core": "^0.35.0",
+    "@mantine/carousel": "^7.12.2",
     "@mantine/core": "^7.12.2",
     "@mantine/hooks": "^7.12.2",
     "@prisma/client": "^5.19.1",
@@ -46,6 +47,7 @@
     "cross-env": "^7.0.3",
     "cross-fetch": "^4.0.0",
     "dotenv": "^16.4.5",
+    "embla-carousel-react": "^7.1.0",
     "express": "^4.21.0",
     "pnpm": "^9.10.0",
     "react": "^18.3.1",
