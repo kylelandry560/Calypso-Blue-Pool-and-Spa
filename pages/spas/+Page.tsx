@@ -1,3 +1,6 @@
+import React from "react";
+
+export default function Page() {
 // Page.tsx
 import React from "react";
 import Card from "./Card"; // Import the Card component
@@ -51,13 +54,4 @@ function Page() {
         sales tactics, but not overbearingly. Preferably there should be a
         navigation drawer on the left.
       </p>
-      <div className="grid-container">
-        {data.map((item) => (
-          <Card key={item.title} {...item} />
-        ))}
-      </div>
-    </>
-  );
-}
 
-export default Page;

@@ -10,8 +10,7 @@ import {
   IconLock,
 } from "@tabler/icons-react";
 import { UserButton } from "../../components/UserButton";
-import { LinksGroup } from "../NavbarLinksGroup/NavbarLinksGroup";
-import { Logo } from "./Logo";
+import { LinksGroup } from "../../components/NavbarLinksGroup"
 import classes from "./NavbarNested.module.css";
 
 const mockdata = [
@@ -57,12 +56,6 @@ export function Navbar() {
 
   return (
     <nav className={classes.navbar}>
-      <div className={classes.header}>
-        <Group justify="space-between">
-          <Logo style={{ width: rem(120) }} />
-          <Code fw={700}>v3.1.2</Code>
-        </Group>
-      </div>
 
       <ScrollArea className={classes.links}>
         <div className={classes.linksInner}>{links}</div>
@@ -71,6 +64,7 @@ export function Navbar() {
       <div className={classes.footer}>
         <UserButton />
       </div>
+      
     </nav>
   );
 }
