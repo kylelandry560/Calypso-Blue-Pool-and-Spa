@@ -85,9 +85,9 @@ export function MainHeader() {
           style={{ display: "block", marginBottom: "1rem" }}
         >
           <Group wrap="nowrap" align="flex-start">
-            <ThemeIcon size={34} variant="white" radius="md">
+            <ThemeIcon size={10} variant="white" radius="md">
               <item.icon
-                style={{ width: 22, height: 22, color: theme.colors.blue[6] }}
+                style={{ width: 10, height: 10, color: theme.colors.blue[6] }}
               />
             </ThemeIcon>
             <div>
@@ -105,8 +105,8 @@ export function MainHeader() {
   };
 
   return (
-    <Box pb={120}>
-      <header className={classes.header}>
+    <Box>
+      <div className={classes.header}>
         <Group justify="space-between" h="100%">
           <IconCode size={60} />
 
@@ -236,7 +236,7 @@ export function MainHeader() {
             hiddenFrom="sm"
           />
         </Group>
-      </header>
+      </div>
 
       {/* FULL SCREEN NAVIGATION FOR SMALL SCREENS */}
       <Drawer

@@ -21,7 +21,7 @@ export default function LayoutDefault({
       <AppShell
         header={{ height: 60 }}
         // navbar={{ width: 300, breakpoint: "sm", collapsed: { mobile: !opened } }}
-        padding="md"
+        padding={{ base: 10, sm: 15, lg: 'xl' }}
       >
         <AppShell.Header>
           <MainHeader />
