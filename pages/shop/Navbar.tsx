@@ -55,7 +55,7 @@ export function Navbar() {
   ));
 
   return (
-    <nav className={classes.navbar} >
+    <nav className={classes.navbar}>
 
       <ScrollArea className={classes.links}>
         <div className={classes.linksInner}>{links}</div>
@@ -64,6 +64,7 @@ export function Navbar() {
       <div className={classes.footer}>
         <UserButton />
       </div>
+      
     </nav>
   );
 }
