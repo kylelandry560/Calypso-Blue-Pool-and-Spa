@@ -223,6 +223,10 @@ export function MainHeader() {
             <a href="/shop" className={classes.link}>
               Shop
             </a>
+
+            <a href="/about" className={classes.link}>
+              About
+            </a>
           </Group>
 
           <Group visibleFrom="sm">
