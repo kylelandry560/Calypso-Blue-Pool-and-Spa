@@ -8,6 +8,7 @@ import {
   IconFileAnalytics,
   IconAdjustments,
   IconLock,
+  IconAsset,
 } from "@tabler/icons-react";
 import { UserButton } from "../../components/UserButton";
 import { LinksGroup } from "../../components/NavbarLinksGroup"
@@ -16,26 +17,31 @@ import classes from "./NavbarNested.module.css";
 const mockdata = [
   { label: "Dashboard", icon: IconGauge },
   {
-    label: "Market news",
+    label: "Pool",
     icon: IconNotes,
-    initiallyOpened: true,
+    initiallyOpened: false,
     links: [
-      { label: "Overview", link: "/" },
-      { label: "Forecasts", link: "/" },
-      { label: "Outlook", link: "/" },
-      { label: "Real time", link: "/" },
+      { label: "Balancing Chemicals", link: "/" },
+      { label: "Chlorine Sanitizers", link: "/" },
+      { label: "Baquacil", link: "/" },
+      { label: "Frog System", link: "/" },
+      { label: "Accessories", link: "/" },
     ],
   },
   {
-    label: "Releases",
+    label: "Spa",
     icon: IconCalendarStats,
     links: [
-      { label: "Upcoming releases", link: "/" },
-      { label: "Previous releases", link: "/" },
-      { label: "Releases schedule", link: "/" },
+      { label: "Balancing Chemicals", link: "/" },
+      { label: "Chlorine Sanitizers", link: "/" },
+      { label: "Baquacil", link: "/" },
+      { label: "Frog System", link: "/" },
+      { label: "Accessories", link: "/" },
     ],
   },
-  { label: "Analytics", icon: IconPresentationAnalytics },
+
+  { label: "Cart", icon: IconAsset },
+  /*
   { label: "Contracts", icon: IconFileAnalytics },
   { label: "Settings", icon: IconAdjustments },
   {
@@ -46,7 +52,7 @@ const mockdata = [
       { label: "Change password", link: "/" },
       { label: "Recovery codes", link: "/" },
     ],
-  },
+  },*/
 ];
 
 export function Navbar() {
@@ -61,10 +67,6 @@ export function Navbar() {
         <div className={classes.linksInner}>{links}</div>
       </ScrollArea>
 
-      <div className={classes.footer}>
-        <UserButton />
-      </div>
-      
     </nav>
   );
 }
