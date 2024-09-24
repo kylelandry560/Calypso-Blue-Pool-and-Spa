@@ -1,39 +1,72 @@
 .title {
-    font-size: rem(34px);
-    font-weight: 900;
-  
-    @media (max-width: $mantine-breakpoint-sm) {
-      font-size: rem(24px);
-    }
+  font-size: rem(34px);
+  font-weight: 900;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: rem(24px);
   }
-  
-  .description {
-    max-width: rem(600px);
-    margin: auto;
-  
-    &::after {
-      content: '';
-      display: block;
-      background-color: var(--mantine-color-blue-filled);
-      width: rem(45px);
-      height: rem(2px);
-      margin-top: var(--mantine-spacing-sm);
-      margin-left: auto;
-      margin-right: auto;
-    }
+}
+
+.description {
+  max-width: rem(600px);
+  margin: auto;
+
+  &::after {
+    content: '';
+    display: block;
+    background-color: var(--mantine-color-blue-filled);
+    width: rem(45px);
+    height: rem(2px);
+    margin-top: var(--mantine-spacing-sm);
+    margin-left: auto;
+    margin-right: auto;
   }
-  
-  .card {
-    border: rem(1px) solid light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
+}
+
+.card {
+  border: rem(1px) solid light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
+}
+
+.cardTitle {
+  &::after {
+    content: '';
+    display: block;
+    background-color: var(--mantine-color-blue-filled);
+    width: rem(45px);
+    height: rem(2px);
+    margin-top: var(--mantine-spacing-sm);
   }
-  
-  .cardTitle {
-    &::after {
-      content: '';
-      display: block;
-      background-color: var(--mantine-color-blue-filled);
-      width: rem(45px);
-      height: rem(2px);
-      margin-top: var(--mantine-spacing-sm);
-    }
-  }
+}
+
+.iconContainer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: row; /* Change to row to align icons horizontally */
+  gap: 10px; /* Space between the icons */
+  z-index: 1000;
+}
+
+.iconContainer a {
+  cursor: pointer;
+}
+
+.iconContainer a:hover {
+  transform: scale(1.1); /* Add hover effect */
+  transition: transform 0.3s ease-in-out;
+}
+
+
+/* Positioning for the icon container */
+.iconContainer {
+position: fixed; /* Stays fixed when the user scrolls */
+bottom: 20px; /* Distance from the bottom */
+right: 20px; /* Distance from the right */
+display: flex; /* Horizontal alignment */
+gap: 15px; /* Space between icons */
+}
+
+.iconContainer a {
+text-decoration: none;
+}
